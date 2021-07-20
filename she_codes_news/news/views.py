@@ -1,6 +1,14 @@
 from django.views import generic
+from django.urls import reverse_lazy
+from .forms import StoryForm
 from .models import NewsStory
 
+
+class AddStoryView(generic.CreateView):
+    form_class = StoryForm
+    context_object_name = 'storyForm'
+    template_name = 'news/createStory.html'
+    success_url = reverse_lazy('news:index')
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
