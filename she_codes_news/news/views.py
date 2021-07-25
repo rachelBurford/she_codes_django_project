@@ -1,5 +1,6 @@
 from django.views import generic
 from django.urls import reverse_lazy
+from django.shortcuts import render
 from .forms import StoryForm
 from .models import NewsStory
 
@@ -22,6 +23,11 @@ class IndexView(generic.ListView):
         context['latest_stories'] = NewsStory.objects.all()[:4]
         context['all_stories'] = NewsStory.objects.all()
         return context
+
+    def index(request):
+        latest_blog_list = NewsStory.objects.order_by('-pub_date')[:5]
+        context = {'latest_blog_list': latest_blog_list}
+        return render(request, 'news/index.html', context)
 
 
 class StoryView(generic.DetailView):

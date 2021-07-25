@@ -1,10 +1,13 @@
 {% extends 'base.html' %} 
 {% block content %} 
+<div class="blog">
+    <h3>Submit a new Blog</h3>
+</div>
 
-<form action="" method="post">
+<form id="create_form" action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="submit">
+    <input id="submit" type="submit" value="submit">
 </form>
 
 {% endblock %}
