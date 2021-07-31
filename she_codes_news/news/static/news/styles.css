@@ -12,11 +12,11 @@
 
 #latest-stories {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 1px 1px;
-    grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3";
-    max-height: 500px;
+    grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3" "left-1 right-4";
+    max-height: 900px;
 }
 
 #story-card-1 {
@@ -35,9 +35,24 @@
     grid-area: right-3;
 }
 
+#story-card-5 {
+    grid-area: right-4;
+}
+
+#story-card-1 a {
+    display: grid;
+    margin-left: 20%;
+    text-align: center;
+}
+
+.story-card-text {
+    padding-top: 10px;
+}
+
 #story-card-2 a,
 #story-card-3 a,
-#story-card-4 a {
+#story-card-4 a,
+#story-card-5 a {
     display: flex;
     max-height: 120px;
     width: 100%;
@@ -46,19 +61,22 @@
 
 #story-card-2 .story-card-text h3,
 #story-card-3 .story-card-text h3,
-#story-card-4 .story-card-text h3 {
+#story-card-4 .story-card-text h3,
+#story-card-5 .story-card-text h3 {
     font-size: 16px;
 }
 
 #story-card-2 .story-card-text h4,
 #story-card-3 .story-card-text h4,
-#story-card-4 .story-card-text h4 {
+#story-card-4 .story-card-text h4,
+#story-card-5 .story-card-text h4 {
     font-size: 12px;
 }
 
 #story-card-2 img,
 #story-card-3 img,
-#story-card-4 img {
+#story-card-4 img,
+#story-card-5 img {
     width: 33%;
     height: 100%;
     margin-right: 5px;
@@ -83,4 +101,9 @@
     float: right;
     margin: 0 0 10px 10px;
     width: 50%;
+}
+
+#story-image {
+    width: 400px;
+    max-height: 400px;
 }

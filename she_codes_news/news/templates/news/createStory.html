@@ -7,6 +7,16 @@
 <form id="create_form" action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    <!-- {% for field in form.fields %}
+    <label>{{ field.label }}</label>
+    {{ field }}
+    <input></input>
+    {% if field.errors %}
+   <div class="a">{{ field.errors }}</div>
+    {% endif %}
+    <br>
+    {% endfor %} -->
+
     <input id="submit" type="submit" value="submit">
 </form>
 

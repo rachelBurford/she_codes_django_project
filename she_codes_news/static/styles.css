@@ -1,7 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
+
 body {
-    background-color: rgba(133, 118, 118, 0.288);
+    background-color: rgba(147, 112, 216, 0.288);
+    /* background-color: rgba(133, 118, 118, 0.288); */
+}
+
+.title {
+    background: linear-gradient(90deg, rgba(147,112,216), #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 10s infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
 }
 
 header {
@@ -12,22 +31,24 @@ header {
 }
 
 img {
-    filter: grayscale(100%);
+    max-width: 400px;
+    /* filter: grayscale(100%); */
 }
 
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+   font-family: Verdana, Geneva, Tahoma, sans-serif; 
 }
 
 h3 {
     font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
 }
 
@@ -54,7 +75,7 @@ a, p {
     text-align: left;
     display: flex;
     align-items: stretch;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-basis: auto;
     justify-content: space-between;
 }
@@ -76,7 +97,7 @@ a, p {
 }
 
 label {
-    background-color: coral;
+    /* background-color: coral; */
     width: 22%;
     margin: 10px;
     padding: 0px;
@@ -86,22 +107,35 @@ label {
 
 }
 textarea {
-    /* background-color: cyan; */
+    background-color:rgba(246, 244, 250, 0.452);
     flex-grow: 3;
     font-size: larger;
     font-weight: normal;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-input {
-    /* background-color: darkgoldenrod; */
-    width: 45%;
+input, button {
+    background-color:rgba(246, 244, 250, 0.452);
     align-items: flex-end;
     flex-grow: 2;
     padding-bottom: 8px;
     font-size: larger;
     font-weight: normal;
+    border-radius: 7.5px;
 }
+
+.buttons {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+}
+
+/* #id_username {
+    /* background-color:rgba(246, 244, 250, 0.452); */
+/* } 
+
 
 input:hover {
     border: 2px solid #FA4224; 
@@ -121,4 +155,7 @@ input:hover {
 
 select {
     width: 74.5%;
+}
+.text {
+    color: yellow;
 }

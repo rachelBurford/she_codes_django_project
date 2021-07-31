@@ -9,3 +9,7 @@ class CreateAccountView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
 # Create your views here.
+
+class AdminHomeView(generic.ListView):
+    model = CustomUser
+    template_name = 'users/accountInfo.html'

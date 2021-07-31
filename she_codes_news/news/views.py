@@ -1,8 +1,12 @@
+from django.contrib import auth
 from django.views import generic
 from django.urls import reverse_lazy
 from django.shortcuts import render
 from .forms import StoryForm
 from .models import NewsStory
+from django.views.generic import ListView
+from django.views.generic import DetailView
+
 
 
 class AddStoryView(generic.CreateView):
@@ -17,24 +21,50 @@ class AddStoryView(generic.CreateView):
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
+    model = NewsStory
 
-    def get_queryset(self):
-        '''Return all news stories.'''
-        return NewsStory.objects.all()
+    # def get_queryset(self):
+    #     '''Return all news stories.'''
+    #     return NewsStory.objects.order_by('-pub_date')[:5]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latest_stories'] = NewsStory.objects.all()[:4]
-        context['all_stories'] = NewsStory.objects.all()
+        context['latest_stories'] = NewsStory.objects.order_by('-pub_date')[:5]
+        context['all_stories'] = NewsStory.objects.order_by('-pub_date')[:5]
         return context
 
-    def index(request):
-        latest_blog_list = NewsStory.objects.order_by('-pub_date')[:5]
-        context = {'latest_blog_list': latest_blog_list}
-        return render(request, 'news/index.html', context)
+    # def index(request):
+    #     latest_blog_list = NewsStory.objects.order_by('-pub_date')[:5]
+    #     context = {'latest_blog_list': latest_blog_list}
+    #     return render(request, 'news/index.html', context)
 
 
 class StoryView(generic.DetailView):
     model = NewsStory
     template_name = 'news/story.html'
     context_object_name = 'story'
+
+class AuthorView(ListView):
+    queryset = NewsStory.objects.order_by('author')
+    context_object_name = 'author_list'
+    template_name = 'news/author.html'
+    model = NewsStory
+
+    def get_queryset(self):
+        self.author = get_object_or_404(Author, name=self.kwargs['author'])
+        return NewsStory.objects.filter(author=self.author)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['author'] = self.author
+        # context['latest_stories'] = NewsStory.objects.order_by('-pub_date')[:5]
+        # context['all_stories'] = NewsStory.objects.order_by('-pub_date')[:5]
+        return context
+
+
+
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['author_stories'] = NewsStory.objects.all()
+    #     # return context

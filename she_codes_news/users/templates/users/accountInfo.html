@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<h2>User in Focus : {{ user.username }}</h2>
+
+<h4> User ID :   {{ user.username }} </h4>
+<h4> Email ID:  {{ user.email }} </h4>
+
+<a href="{% url 'news:index' %}" class="buttons">View Recent Stories</a>
+<a class="buttons"> Update Details</a>
+
+{% endblock %} 

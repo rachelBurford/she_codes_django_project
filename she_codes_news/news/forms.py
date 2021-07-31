@@ -6,7 +6,7 @@ from .models import NewsStory
 class StoryForm(ModelForm):
     class Meta:
         model = NewsStory
-        fields = ['title','pub_date','content']
+        fields = ['title','pub_date','content','image']
         widgets = {
             'pub_date': forms.DateInput(format=('%m/%d/%Y'),
                 attrs={
@@ -17,11 +17,9 @@ class StoryForm(ModelForm):
             )
         }
 
-# class StoryForm(ModelForm):
-#     class Meta:
-#         def __init__(self,*args, **kwargs):
-#             super(StoryForm, self).__init__(*args, **kwargs)
-#             self.fields['myfield'].widget.attrs.update({'class': 'myfieldclass'})
+    def __init__(self,*args, **kwargs):
+        super(StoryForm, self).__init__(*args, **kwargs)
+        self.fields['title'].widget.attrs.update({'class': 'title_class'})
 
-class MyForm(forms.Form):
-    myfield = forms.CharField(widget=forms.TextInput(attrs={'class':'myfieldclass'}))
+# class MyForm(forms.Form):
+#     myfield = forms.CharField(widget=forms.TextInput(attrs={'class':'myfieldclass'}))
