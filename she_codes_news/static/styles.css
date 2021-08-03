@@ -73,11 +73,11 @@ a {
 a, p {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
-    display: flex;
-    align-items: stretch;
+    /* display: flex; */
+    /* align-items: stretch; */
     /* flex-wrap: wrap; */
     flex-basis: auto;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .blog {

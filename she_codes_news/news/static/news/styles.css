@@ -41,8 +41,11 @@
 
 #story-card-1 a {
     display: grid;
-    margin-left: 20%;
     text-align: center;
+}
+#story-card-1 img {
+    display: grid;
+    margin-left: 20%;
 }
 
 .story-card-text {
