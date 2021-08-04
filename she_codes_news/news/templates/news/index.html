@@ -19,11 +19,11 @@
             <p>No stories are available.</p>
         {% endif %}
     </div>
-
+<!-- stuff goes in the one below -->
     <div id="all-stories">
         {% if latest_stories %}
             {% for story in all_stories %}
-                {% include "./storyCard.html" with story=story %}
+                {% include "./storyCard2.html" with story=story position=forloop.counter %}
             {% endfor %}
         {% else %}
             <p>No stories are available.</p>
