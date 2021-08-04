@@ -88,9 +88,36 @@
     justify-content: space-between;
 }
 
-#all-stories .story-card {
+#all-stories .story-board {
     flex-basis: 32%;
     flex-grow: 1;
+}
+
+.story-board .story-card-text h3 {
+    color: rgba(150, 16, 150, 0.534);
+    font-size: large;
+}
+.story-board .story-card-text h4 {
+    color: rgba(150, 16, 150);
+    font-size: medium;
+}
+.story-board .story-card-text .pub {
+    color: rgb(71, 71, 71);
+    font-size: small;
+}
+
+#story-board-1 img,
+#story-board-2 img,
+#story-board-3 img,
+#story-board-4 img,
+#story-board-5 img {
+    width: 50%;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.story-board a {
+    padding-top: 10px;
 }
 
 #story-content {
