@@ -12,7 +12,8 @@ class NewsStory(models.Model):
     # author = models.CharField(max_length=200, choices=TITLE_CHOICE)
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="stories"
     )
     pub_date = models.DateTimeField()
     content = models.TextField()

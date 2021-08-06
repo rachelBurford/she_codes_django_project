@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
 
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'user_styles.css' %}">
+{% endblock %}
 {% block content %} 
 
 <h2>User in Focus : {{ user.username }}</h2>
 
 <h4> User ID :   {{ user.username }} </h4>
 <h4> Email ID:  {{ user.email }} </h4>
+
+    <div>
+        {% for story in user.stories.all %}
+            {% include "news/storyCard.html" with story=story position=forloop.counter %}
+        {% endfor %}
+    </div>
 
 <a href="{% url 'news:index' %}" class="buttons">View Recent Stories</a>
 <a class="buttons"> Update Details</a>

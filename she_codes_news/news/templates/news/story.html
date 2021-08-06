@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block stylesheets %} 
+{{ block.super }}
 <link rel="stylesheets" type="text/css" href="{% static 'news/styles.css' %}">
 {% endblock %} 
 
