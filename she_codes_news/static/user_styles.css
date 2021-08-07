@@ -1,5 +1,15 @@
 @import 'styles.css';
+@import '/she_codes_django_project/she_codes_news/news/static/news/styles.css';
 
 body {
     background-color: rgba(255, 244, 255, 0.959);
+}
+
+#reel {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3" "left-1 right-4";
+    max-height: 900px;
 }

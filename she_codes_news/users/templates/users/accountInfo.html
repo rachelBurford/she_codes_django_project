@@ -11,7 +11,7 @@
 <h4> User ID :   {{ user.username }} </h4>
 <h4> Email ID:  {{ user.email }} </h4>
 <img src="{{ user.image }}">
-    <div>
+    <div id=reel>
         {% for story in user.stories.all %}
             {% include "news/storyCard.html" with story=story position=forloop.counter %}
         {% endfor %}
