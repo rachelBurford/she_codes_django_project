@@ -144,3 +144,13 @@
     width: 400px;
     max-height: 400px;
 }
+
+.button {
+    float: right;
+    margin-top: 0px;
+    padding: 10px;
+    background-color: plum;
+    border-color: rgb(229, 140, 229);
+    border-radius: 5%;
+    border-style: groove;
+}
