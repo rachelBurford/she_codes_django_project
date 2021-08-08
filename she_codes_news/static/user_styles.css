@@ -4,12 +4,27 @@
 body {
     background-color: rgba(255, 244, 255, 0.959);
 }
-
-#reel {
-    display: grid;
+#user {
+    float: right;
+}
+#all-stories {
+    display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3" "left-1 right-4";
-    max-height: 900px;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+}
+.story-card-text {
+    max-width: 45%;
+}
+.story-board {
+    max-width: 45%;
+}
+#profile_pic {
+    width: 50px;
+    height: 50px;
+}
+
+.story-card img {
+    max-width: 400px;
+    height: 266px;
 }

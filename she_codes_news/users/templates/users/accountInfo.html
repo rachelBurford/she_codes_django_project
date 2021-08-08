@@ -6,18 +6,23 @@
 {% endblock %}
 {% block content %} 
 
-<h2>User in Focus : {{ user.username }}</h2>
+<div id=user>
+    <img id="profile_pic" src="{{ user.image }}"><h4> User ID :   {{ user.username }} <br>
+        Email ID:  {{ user.email }} </h4>
+</div>
+<div>
+    <h2> Hello {{ user.username }} these are your most recent posts: </h2>
+</div>
 
-<h4> User ID :   {{ user.username }} </h4>
-<h4> Email ID:  {{ user.email }} </h4>
-<img src="{{ user.image }}">
-    <div id=reel>
+
+    <div id=all-stories>
         {% for story in user.stories.all %}
             {% include "news/storyCard.html" with story=story position=forloop.counter %}
         {% endfor %}
     </div>
-
-<a href="{% url 'news:index' %}" class="buttons">View Recent Stories</a>
-<a href="/users/accountDetails" class="buttons">Update Details</a>
-
+    <div>
+        <a href="{% url 'news:index' %}" class="buttons">View Recent Stories</a>
+        <a href="{% url 'users:updateDetails' %}" class="buttons">Update Details</a>
+    </div>
 {% endblock %} 
+

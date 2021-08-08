@@ -62,21 +62,30 @@
 #story-card-2 .story-card-text h3,
 #story-card-3 .story-card-text h3,
 #story-card-4 .story-card-text h3,
-#story-card-5 .story-card-text h3 {
+#story-card-5 .story-card-text h3,
+#story-card-6 .story-card-text h3,
+#story-card-7 .story-card-text h3,
+#story-card-8 .story-card-text h3 {
     font-size: 16px;
 }
 
 #story-card-2 .story-card-text h4,
 #story-card-3 .story-card-text h4,
 #story-card-4 .story-card-text h4,
-#story-card-5 .story-card-text h4 {
+#story-card-5 .story-card-text h4,
+#story-card-6 .story-card-text h4,
+#story-card-7 .story-card-text h4,
+#story-card-8 .story-card-text h4 {
     font-size: 12px;
 }
 
 #story-card-2 img,
 #story-card-3 img,
 #story-card-4 img,
-#story-card-5 img {
+#story-card-5 img,
+#story-card-6 img,
+#story-card-7 img,
+#story-card-8 img {
     width: 33%;
     height: 100%;
     margin-right: 5px;

@@ -1,11 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
-TITLE_CHOICE = [
-    ('STAFF','STAFF'),
-    ('MEMBER','MEMBER'),
-    ('ANON','ANON')
-]
+from django.db.models.deletion import CASCADE
 
 class NewsStory(models.Model):
     title = models.CharField(max_length=200)
@@ -19,3 +14,6 @@ class NewsStory(models.Model):
     content = models.TextField()
     image = models.URLField()
     
+class Book(models.Model):
+    title = models.ManyToManyField('NewStory'),
+    author = models.ForeignKey(NewsStory,on_delete=CASCADE)

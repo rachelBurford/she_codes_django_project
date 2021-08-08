@@ -2,7 +2,7 @@ from django.contrib import admin
 from news.models import NewsStory
 
 class NewsStoryAdmin(admin.ModelAdmin):
-    fields = ['title','image','pub_date','content']
+    fields = ['title','image','pub_date','content','author']
     list_display = ('title','author','pub_date')
     list_filter = ['pub_date']
 

@@ -1,11 +1,12 @@
 from django.contrib import auth
 from django.views import generic
+from django.views.generic import ListView
 from django.urls import reverse_lazy
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import StoryForm
 from .models import NewsStory
-from django.views.generic import ListView
 from django.views.generic import DetailView
+from news.models import Book
 
 
 
@@ -51,7 +52,7 @@ class AuthorView(ListView):
     model = NewsStory
 
     def get_queryset(self):
-        self.author = get_object_or_404(Author, name=self.kwargs['author'])
+        self.author = get_object_or_404(NewsStory, name=self.kwargs['author'])
         return NewsStory.objects.filter(author=self.author)
 
     def get_context_data(self, **kwargs):
@@ -62,6 +63,12 @@ class AuthorView(ListView):
         return context
 
 
+class BookListView(ListView):
+    model = Book
+    template_name = 'news/booklistview.html'
+
+    def get_queryset(self):
+        self.book = get_object_or_404(Book, name=self.kwargs['author'])
 
 
     # def get_context_data(self, **kwargs):

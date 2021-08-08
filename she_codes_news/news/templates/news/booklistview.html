@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>Author</h2>
+    <ul>
+        {% for book in object_list %}
+            <li>{{ book.author }}</li>
+        {% endfor %}
+
+        {% for story in user.stories.all %}
+            {% include "news/storyCard.html" with story=story position=forloop.counter %}
+        {% endfor %}
+
+    </ul>
+{% endblock %}
