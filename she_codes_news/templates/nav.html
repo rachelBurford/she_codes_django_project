@@ -2,7 +2,7 @@
     <ul>
         <li><a href="{% url 'news:index' %}">Home</a></li>
         {% if request.user.is_authenticated %}
-            <li><a href="{% url 'users:accountInfo' %}">{{ user.username }}</a></li>
+            <li><img id="nav_profile_pic" src="{{ user.image }}"><a href="{% url 'users:accountInfo' %}">{{ user.username }}</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
         {% else %}
         <li><a href="{% url 'login' %}">Login</a></li>
