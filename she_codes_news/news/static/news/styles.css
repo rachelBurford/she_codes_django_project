@@ -122,8 +122,9 @@
 #story-board-5 img,
 #story-board-6 img {
     width: 50%;
-    max-height: 120px;
+    height: 120px;
     margin-right: 5px;
+    object-fit: cover;
 }
 
 .story-board a {
